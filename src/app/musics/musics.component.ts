@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Music } from '../models/music';
-import { Artist } from '../models/artist';
-import { Genre } from '../models/genre';
+import { Music } from './models/music';
+import { Artist } from './models/artist';
+import { Genre } from './models/genre';
+import { MusicService } from 'src/app/musics/services/musics.service';
 
 @Component({
   selector: 'app-musics',
@@ -10,11 +11,18 @@ import { Genre } from '../models/genre';
 })
 export class MusicsComponent implements OnInit {
 
-  music : Music = new Music(1, 'Supermassive Black Hole', new Artist(1, 'Muse'), new Genre(1, 'Rock'));
+  private musicList : Music[];
 
-  constructor() { }
+  constructor() { 
+    this.getAllMusics();
+  }
 
   ngOnInit() {
+    this.getAllMusics();
+  }
+
+  getAllMusics(){
+    this.musicList = MusicService.prototype.getAll();
   }
 
 }
