@@ -6,11 +6,13 @@ import { HomeModule } from './home/home.module';
 import { MusicsModule } from './musics/musics.module';
 
 import { AppComponent } from './app.component';
+import { MessagesComponent } from './shared/messages/messages.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

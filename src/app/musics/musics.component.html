@@ -1,19 +1,7 @@
 <div class="container">
     <div class="row justify-content-center">Musics</div>
 
-    <div class="row justify-content-center">
-        <a class="col col-md-5">Name</a>
-        <a class="col-2">Artist</a>
-        <a class="col-2">Genre</a>
-    </div>
+    <app-music-item class="row justify-content-center" #musics></app-music-item>
 
-    <div *ngFor="let music of musicList">
-        <div class="row justify-content-center">
-            <a class="col col-md-5">{{music.name}}</a>
-            <a class="col-2">{{music.artist.name}}</a>
-            <a class="col-2">{{music.genre.name}}</a>
-        </div>
-    </div>
-
-<br>
+    <app-music-details class="row justify-content-center" *ngIf="musics.selectedMusic != null" [music]="musics.selectedMusic"></app-music-details>
 </div>

@@ -1,0 +1,15 @@
+<div *ngIf="selectedMusic == null">
+  <div class="row ">
+      <a class="col col-md-5">Name</a>
+      <a class="col-2">Artist</a>
+      <a class="col-2">Genre</a>
+  </div>
+
+  <div *ngFor="let music of musicList" [class.selected]="music === selectedMusic" (click)="onSelect(music)">
+      <div class="row " >
+          <a class="col col-md-5">{{music.name}}</a>
+          <a class="col-2">{{music.artist.name}}</a>
+          <a class="col-2">{{music.genre.name}}</a>
+      </div>
+  </div>
+</div>
