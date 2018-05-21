@@ -13,8 +13,6 @@ export class MusicItemComponent implements OnInit {
 
   private musicList : Music[];
 
-  selectedMusic : Music;
-
   constructor(private musicService : MockMusicService) { 
   }
 
@@ -26,9 +24,4 @@ export class MusicItemComponent implements OnInit {
     this.musicService.getAll()
           .subscribe(musicList => this.musicList = musicList);
   }
-
-  onSelect(music : Music) : void{
-    this.selectedMusic = music;
-  }
-
 }

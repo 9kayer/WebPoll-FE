@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { MusicsComponent } from './musics.component';
+import { MusicItemComponent } from './music-item/music-item.component';
+import { MusicDetailsComponent } from './music-details/music-details.component';
 
 const routes: Routes = [
-  { path: '/musics', component: MusicsComponent },
-  { path: '/musics/:id', component: MusicsComponent }
+  { path: 'musics', component: MusicItemComponent },
+  { path: 'musics/:id', component: MusicDetailsComponent }
 ];
 
 @NgModule({

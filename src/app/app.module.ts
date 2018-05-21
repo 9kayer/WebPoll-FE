@@ -16,9 +16,9 @@ import { MessagesComponent } from './shared/messages/messages.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    MusicsModule,
     HomeModule,
-    MusicsModule
+    AppRoutingModule    
   ],
   providers: [],
   bootstrap: [AppComponent]

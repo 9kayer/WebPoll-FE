@@ -35,4 +35,9 @@ export class MockMusicService{
         this.messageService.add('MusicService: fetched musics');
         return of(musicList);
     }
+
+    get(id : number) : Observable<Music>{
+        let music : Music = musicList.find(m => m.id === id);
+        return of(music);
+    }
 }
