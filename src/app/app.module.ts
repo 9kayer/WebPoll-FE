@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './home/home.module';
@@ -16,6 +17,7 @@ import { MessagesComponent } from './shared/messages/messages.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     MusicsModule,
     HomeModule,
     AppRoutingModule    

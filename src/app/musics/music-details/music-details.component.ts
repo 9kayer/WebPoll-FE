@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Music } from '../models/music';
 import { Artist } from '../models/artist';
 import { Genre } from '../models/genre';
-import { MockMusicService } from '../services/mock-musics.service';
+import { MusicService } from '../services/music.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
@@ -18,7 +18,7 @@ export class MusicDetailsComponent implements OnInit {
 
   constructor(
     private route : ActivatedRoute,
-    private musicService: MockMusicService
+    private musicService: MusicService
   ) { }
 
   ngOnInit() {
@@ -26,7 +26,7 @@ export class MusicDetailsComponent implements OnInit {
         .subscribe(params => {
             let id = +params['id'];
             this.musicService.get(id)
-                .subscribe(music =>{
+                .subscribe((music : Music) =>{
                     this.music = music;
                 })
     });

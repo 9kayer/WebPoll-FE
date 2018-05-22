@@ -1,0 +1,11 @@
+<div class="music-item-wrapper">
+  <div class="card border-primary mb-3">
+    <div class="card-header text-white bg-primary"><b>Id:</b> {{music.id}}</div>
+    <div class="card-body">
+      <h4 class="card-title">{{music.name}}</h4>
+      <p class="card-text"><b>Artist:</b> {{music.artist.name}}</p>
+      <p class="card-text"><b>Genre</b> {{music.genre.name}}</p>
+      <button type="button" class="btn btn-primary" routerLink="/musics/{{music.id}}">Details</button>
+    </div>
+  </div>
+</div>
