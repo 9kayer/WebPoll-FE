@@ -1,0 +1,13 @@
+<div class="container">
+  <h1 mat-dialog-title>Edit name</h1>
+
+  <div>
+    <label class="col-form-label" for="inputName">Name</label>
+    <input class="form-control" [(ngModel)]="name" placeholder="Add name" id="inputName" type="text">
+  </div>
+
+  <mat-dialog-actions class="justify-content-end">
+    <button type="button" mat-button class="btn btn-secondary" mat-dialog-close>Cancel</button>
+    <button type="button" mat-button class="btn btn-primary" [mat-dialog-close]="name">Update</button>
+  </mat-dialog-actions>  
+</div>

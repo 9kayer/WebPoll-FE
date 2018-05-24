@@ -15,10 +15,20 @@ export class MusicService {
   constructor(private http : HttpClient) { }
 
   getAll() : Observable<Music[]>{
-      return this.http.get<Music[]>(this.baseURL + this.musicURL);          
+    return this.http.get<Music[]>(this.baseURL + this.musicURL);          
   }
 
   get(id : number) : Observable<Music>{
-      return this.http.get<Music>(this.baseURL + this.musicURL + '/' + id);
+    return this.http.get<Music>(this.baseURL + this.musicURL + '/' + id);
+  }
+
+  update(music : Music) : Observable<Object>{
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+
+    return this.http.put(this.baseURL + this.musicURL + '/' + music.id, music, httpOptions);
   }
 }
